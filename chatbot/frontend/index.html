@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Académico MVP</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chatbot Académico MVP</h1>
+
+        <section id="auth-section" class="auth-section">
+            <div class="form-container">
+                <h2>Registrarse</h2>
+                <input type="text" id="reg-username" placeholder="Usuario">
+                <input type="password" id="reg-password" placeholder="Contraseña">
+                <button onclick="register()">Registrar</button>
+                <div id="reg-message" class="message"></div>
+            </div>
+
+            <div class="form-container">
+                <h2>Iniciar Sesión</h2>
+                <input type="text" id="login-username" placeholder="Usuario">
+                <input type="password" id="login-password" placeholder="Contraseña">
+                <button onclick="login()">Iniciar Sesión</button>
+                <div id="login-message" class="message"></div>
+            </div>
+        </section>
+
+        <section id="app-section" class="app-section" style="display: none;">
+            <p>Bienvenido/a, <span id="welcome-username" class="welcome-username"></span>! 
+                <button onclick="logout()">Cerrar Sesión</button>
+            </p>
+
+            <div class="form-container">
+                <h2>Cargar PDF (Base de Conocimiento)</h2>
+                <input type="file" id="pdf-file" accept=".pdf">
+                <button onclick="uploadPdf()">Subir PDF e Indexar</button>
+                <div id="upload-message" class="message"></div>
+            </div>
+
+            <div class="form-container">
+                <h2>Chat con el Asistente</h2>
+                <div id="chat-box" class="chat-box">
+                    </div>
+                <input type="text" id="chat-input" placeholder="Escribe tu pregunta académica..." onkeyup="handleChatInput(event)">
+                <button onclick="sendMessage()">Enviar</button>
+                <div id="chat-message" class="message"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

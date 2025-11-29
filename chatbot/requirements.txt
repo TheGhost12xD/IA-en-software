@@ -1,0 +1,9 @@
+fastapi[all]
+uvicorn
+python-jose[cryptography]
+passlib[bcrypt]
+pypdf
+sentence-transformers
+faiss-cpu
+python-dotenv
+httpx
